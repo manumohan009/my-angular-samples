@@ -1,0 +1,9 @@
+<p style="border:1px solid yellow">
+  I'm parent component {{parentName}} <br>
+
+  <app-child1 [messageFromParentToChild1]="this.message" [messageFromChild2]="this.messageFromChild2" (messageToChild2)="onReceiveMessageFromChild1($event)"
+    (phoneEvent)="phoneEventHander($event)"></app-child1>
+  <app-child2 [messageFromParentToChild2]="this.message" [messageFromChild1]="this.messageFromChild1" (messageToParent)="onReceiveMessageFromChild2($event)">
+  </app-child2>
+  <button (click)="this.message='Shiva'">Send message to children</button>
+</p>

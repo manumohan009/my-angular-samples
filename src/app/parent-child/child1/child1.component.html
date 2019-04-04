@@ -1,0 +1,11 @@
+<p style="border:1px solid red">
+  I'm child 1 : {{child1Name}} <br>
+  Message passed from parent : {{messageFromParentToChild1}}<br>
+  Message received from child2 : {{messageFromChild2}}<br>
+  <button (click)="this.sendMessageToChild2('Bhymi')">Send message to child 2</button>
+
+  <!-- <button (click)="sendMessage()">Send message to child 2</button> -->
+  <!-- <input type="text" (keyup)="onNameChange()" [(ngModel)]="userName" placeholder="Enter user name here"> -->
+
+  <!-- <input type="text" (keyup)="onPhoneChange()" [(ngModel)]="userPhone" placeholder="Enter user phone number here"> -->
+</p>
