@@ -4,11 +4,13 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from '../home/home.component';
 import { ParentComponent } from '../parent-child/parent/parent.component';
 import { MyHomeComponent } from '../shared-service/my-home/my-home.component';
+import { ConsumeHttpComponent } from '../consume-http/consume-http.component';
+import { HttpClientComponent } from '../http-example/http-client/http-client.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/parent',
+    redirectTo: '/http-example',
 		pathMatch: 'full'
   },
   {
@@ -23,6 +25,10 @@ const routes: Routes = [
   {
     path: 'shared-service',
     component: MyHomeComponent
+  },
+  {
+    path: 'http-example',
+    component: HttpClientComponent
   }
 ];
 

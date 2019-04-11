@@ -7,7 +7,7 @@ const io = require('socket.io')(server.server);
 let sockets = new Set();
 
 const corsMiddleware = require('restify-cors-middleware');
-const port = 3000;
+const port = 3001;
 
 const cors = corsMiddleware({
   origins: ['*'],

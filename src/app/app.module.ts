@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -17,6 +18,7 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 import { MyHomeComponent } from './shared-service/my-home/my-home.component';
 import { MyChild1Component } from './shared-service/my-child1/my-child1.component';
 import { MyChild2Component } from './shared-service/my-child2/my-child2.component';
+import { HttpClientComponent } from './http-example/http-client/http-client.component';
 
 @NgModule({
   declarations: [
@@ -31,13 +33,15 @@ import { MyChild2Component } from './shared-service/my-child2/my-child2.componen
     Child2Component,
     MyHomeComponent,
     MyChild1Component,
-    MyChild2Component
+    MyChild2Component,
+    HttpClientComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    NgbModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

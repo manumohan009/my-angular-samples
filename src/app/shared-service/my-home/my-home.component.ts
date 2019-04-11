@@ -27,7 +27,4 @@ export class MyHomeComponent implements OnInit, OnDestroy  {
   ngOnDestroy(){
     this.subscription.unsubscribe();
   }
-
-
-
 }
