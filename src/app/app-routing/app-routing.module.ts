@@ -6,11 +6,12 @@ import { ParentComponent } from '../parent-child/parent/parent.component';
 import { MyHomeComponent } from '../shared-service/my-home/my-home.component';
 import { ConsumeHttpComponent } from '../consume-http/consume-http.component';
 import { HttpClientComponent } from '../http-example/http-client/http-client.component';
+import { MyMapComponent } from '../agm-example/my-map/my-map.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/http-example',
+    redirectTo: '/agm-example',
 		pathMatch: 'full'
   },
   {
@@ -29,6 +30,10 @@ const routes: Routes = [
   {
     path: 'http-example',
     component: HttpClientComponent
+  },
+  {
+    path: 'agm-example',
+    component: MyMapComponent
   }
 ];
 

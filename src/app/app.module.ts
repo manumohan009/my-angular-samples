@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AgmCoreModule } from '@agm/core';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -19,6 +20,7 @@ import { MyHomeComponent } from './shared-service/my-home/my-home.component';
 import { MyChild1Component } from './shared-service/my-child1/my-child1.component';
 import { MyChild2Component } from './shared-service/my-child2/my-child2.component';
 import { HttpClientComponent } from './http-example/http-client/http-client.component';
+import { MyMapComponent } from './agm-example/my-map/my-map.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,8 @@ import { HttpClientComponent } from './http-example/http-client/http-client.comp
     MyHomeComponent,
     MyChild1Component,
     MyChild2Component,
-    HttpClientComponent
+    HttpClientComponent,
+    MyMapComponent
   ],
   imports: [
     BrowserModule,
@@ -42,6 +45,7 @@ import { HttpClientComponent } from './http-example/http-client/http-client.comp
     AppRoutingModule,
     FormsModule,
     NgbModule.forRoot(),
+    AgmCoreModule.forRoot({ apiKey: ''})
   ],
   providers: [],
   bootstrap: [AppComponent]
