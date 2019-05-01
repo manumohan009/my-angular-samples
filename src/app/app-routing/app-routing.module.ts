@@ -7,11 +7,12 @@ import { MyHomeComponent } from '../shared-service/my-home/my-home.component';
 import { ConsumeHttpComponent } from '../consume-http/consume-http.component';
 import { HttpClientComponent } from '../http-example/http-client/http-client.component';
 import { MyMapComponent } from '../agm-example/my-map/my-map.component';
+import { MyRxjsComponent } from '../rxjs-example/my-rxjs/my-rxjs.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/agm-example',
+    redirectTo: '/rxjs-example',
 		pathMatch: 'full'
   },
   {
@@ -34,6 +35,10 @@ const routes: Routes = [
   {
     path: 'agm-example',
     component: MyMapComponent
+  },
+  {
+    path: 'rxjs-example',
+    component: MyRxjsComponent
   }
 ];
 
@@ -41,7 +46,8 @@ const routes: Routes = [
   declarations: [],
   imports: [
     CommonModule,
-    RouterModule.forRoot(routes, { useHash: true })
+    // RouterModule.forRoot(routes, { useHash: true })
+    RouterModule.forRoot(routes)
   ],
   exports: [RouterModule]
 })

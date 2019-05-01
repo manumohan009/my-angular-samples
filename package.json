@@ -28,7 +28,7 @@
     "ng2-slim-loading-bar": "^4.0.0",
     "restify": "^7.7.0",
     "restify-cors-middleware": "^1.1.1",
-    "rxjs": "~6.3.3",
+    "rxjs": "^6.3.3",
     "socket.io": "^2.2.0",
     "tslib": "^1.9.0",
     "zone.js": "~0.8.26"

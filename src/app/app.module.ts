@@ -21,6 +21,7 @@ import { MyChild1Component } from './shared-service/my-child1/my-child1.componen
 import { MyChild2Component } from './shared-service/my-child2/my-child2.component';
 import { HttpClientComponent } from './http-example/http-client/http-client.component';
 import { MyMapComponent } from './agm-example/my-map/my-map.component';
+import { MyRxjsComponent } from './rxjs-example/my-rxjs/my-rxjs.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { MyMapComponent } from './agm-example/my-map/my-map.component';
     MyChild1Component,
     MyChild2Component,
     HttpClientComponent,
-    MyMapComponent
+    MyMapComponent,
+    MyRxjsComponent
   ],
   imports: [
     BrowserModule,
