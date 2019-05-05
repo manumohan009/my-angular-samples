@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { of, Subject, Observable, interval, fromEvent } from 'rxjs';
-import { map, filter, debounceTime, distinctUntilChanged, scan, reduce } from 'rxjs/operators';
+import { of, Subject, Observable, interval, fromEvent, BehaviorSubject } from 'rxjs';
+import { map, filter, debounceTime, distinctUntilChanged, scan, reduce, pluck, mergeMap, switchMap } from 'rxjs/operators';
+import { discoverLocalRefs } from '@angular/core/src/render3/context_discovery';
 
 @Component({
   selector: 'app-my-rxjs',
@@ -93,6 +94,78 @@ export class MyRxjsComponent implements OnInit {
     .subscribe(sum => console.log(sum)) */
 
     // --------------- end reduce, scan ---------------------------------------
+
+    // --------------- pluck() ---------------------------------------
+/*       let input = document.querySelector('input');
+      let observable = fromEvent(input,'input');
+
+      observable
+      .pipe(
+      //   map((event)=>{
+      //   return event.target.value
+      // }
+      pluck('target','value'),debounceTime(1000), distinctUntilChanged())
+      .subscribe((data)=>{
+        console.log(data);
+      }) */
+    // --------------- end  pluck() ---------------------------------------
+    // ---------------mergeMap() ---------------------------------------
+
+/*     let input1 = document.querySelector('#input1');
+    let input2 = document.querySelector('#input2');
+    let span = document.querySelector('span');
+
+    let observable1 = fromEvent(input1,'input');
+    let observable2 = fromEvent(input2,'input');
+
+    observable1.pipe(
+      mergeMap((event1)=>{
+        return observable2.pipe(
+          map((event2)=>{
+            return event1.target.value + ' ' + event2.target.value;
+
+          })
+        )
+      })
+    ).subscribe((combinedValue)=> {
+      span.textContent = combinedValue;
+    }) */
+    // ---------------end mergeMap() ---------------------------------------
+    // --------------- switchMap() ---------------------------------------
+/* let button = document.querySelector('button');
+let observable1 = fromEvent(button,'click');
+let observable2 = interval(1000);
+
+// observable1.subscribe((event1)=>{
+//   observable2.subscribe((value)=> {
+//     console.log(value);
+//   })
+// })
+
+observable1.pipe(
+  switchMap((event)=>{
+    return observable2
+  })
+).subscribe((value)=>{
+  console.log(value);
+}) */
+
+    // --------------- end switchMap() ---------------------------------------
+    // --------------- behaviourSubject() ---------------------------------------
+/* 
+  let clickEmitted = new BehaviorSubject('Not clicked');
+  let button = document.querySelector('button');
+  let span = document.querySelector('span');
+
+  button.addEventListener('click', () => {
+    clickEmitted.next('Clicked')
+  })
+
+  clickEmitted.subscribe((value)=>{
+    span.textContent = value;
+  })
+  clickEmitted.next('Not emitted') */
+
 
   }
 
